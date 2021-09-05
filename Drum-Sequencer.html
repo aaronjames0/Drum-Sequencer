@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drum Sequencer</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Drum Sequencer</h1>
+            <h3>By Aaron James</h3>
+            <hr>
+        </header>
+        <section>
+            <div class="sequencer">
+                <div>
+                    <button type="button" class="pause"></button>
+                    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+                    <script type="text/javascript">
+                    $(document).on("click", "button", function(){
+                        if($(this).hasClass("play")) {
+                            $(this).removeClass("play")
+                            $(this).addClass("pause")
+                        }
+                        else {
+                            $(this).removeClass("pause")
+                            $(this).addClass("play")
+                        }
+                    })</script>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <hr>
+        <ul>
+            <li><a href="https://github.com/aaronjames0" target="_blank">GitHub</a></li>
+            <li>aaronjames0@yahoo.com</li>
+        </ul>
+    </footer>
+</html>
