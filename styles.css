@@ -1,77 +1,107 @@
 * {
     color: cadetblue;
     background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 header {
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    height: 10%;
 }
 
-header h1 {
-    padding: 0;
-    margin: 0;
-}
-
-header h3 {
-    padding: 0;
-    margin: 0;
-}
-
-header hr {
-    margin: 0;
-    padding: 0;
+section {
+    width: 100%;
+    height: 85%;
 }
 
 .sequencer {
-    margin: 0;
-    padding: 0;
-    height: 500px;
+    padding:0 auto;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 
-.play {
-    margin: 10px;
-    padding: 0;
-    width: 50px;
-    height: 50px;
-    border-style: solid;
-    border-width: 25px 0px 25px 50px;
-    border-color: transparent transparent transparent greenyellow;
+#playDrums {
+    float: left;
+    width: 5%;
+    height: 100%;
+}
+
+#playBox {
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+    text-align: center;
+}
+
+#playBtn {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+    text-align: center;
+}
+
+#playBtn:hover {
+    background-color: pink;
 }
 
 button.play {
-    margin: 10px;
-    padding: 0;
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 4vw;
     border-style: solid;
-    border-width: 25px 0px 25px 50px;
+    border-width: 50px 0px 50px 100px;
     border-color: transparent transparent transparent green;
 }
 
 button.pause {
-    margin: 10px;
-    padding: 0;
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 4vw;
     border-style: double;
-    border-width: 0px 0px 0px 50px;
+    border-width: 0px 0px 0px 100px;
     border-color: transparent transparent transparent red;
 }
 
+.drums {
+    text-align: left;
+    list-style: none;
+}
+
+.drums li {
+    width: 100px;
+    height: 50px;
+}
+
+.timeline {
+    float: left;
+    width: 95%;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 5%;
+}
+
 footer ul {
-    margin: 0;
-    padding: 0;
     text-align: center;
+    padding: 0 auto;
 }
 
 footer li {
     display: inline-block;
+    padding-top: .5em;
     padding-left: 5em;
     padding-right: 5em;
 }
