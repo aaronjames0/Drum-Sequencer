@@ -3,6 +3,7 @@
     <head>
         <title>Drum Sequencer</title>
         <link rel="stylesheet" href="styles.css"/>
+        <link rel="shortcut icon" href="#">
     </head>
     <body>
         <header>
@@ -15,18 +16,6 @@
                 <div id="playDrums">
                     <div id="playBox">
                         <button type="button" id="playBtn" class="play"></button>
-                        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-                        <script type="text/javascript">
-                        $(document).on("click", "button", function(){
-                            if($(this).hasClass("play")) {
-                                $(this).removeClass("play")
-                                $(this).addClass("pause")
-                            }
-                            else {
-                                $(this).removeClass("pause")
-                                $(this).addClass("play")
-                            }
-                        })</script>
                     </div>
                     <div id="drums">
                         <ul class="drums">
@@ -36,55 +25,23 @@
                 </div>
                 <div class="timeline">
                     <div class="timesRow">
-                        <ul class="times">
-                            <li><div id="time1" class="active col">
-                                1
-                            </div></li>
-                            <li><div id="time2" class="col">
-                                2
-                            </div></li>
-                            <li><div id="time3" class="col">
-                                3
-                            </div></li>
-                            <li><div id="time4" class="col">
-                                4
-                            </div></li>
-                            <li><div id="time5" class="col">
-                                5
-                            </div></li>
-                            <li><div id="time6" class="col">
-                                6
-                            </div></li>
-                            <li><div id="time7" class="col">
-                                7
-                            </div></li>
-                            <li><div id="time8" class="col">
-                                8
-                            </div></li>
-                            <li><div id="time9" class="col">
-                                9
-                            </div></li>
-                            <li><div id="time10" class="col">
-                                10
-                            </div></li>
-                            <li><div id="time11" class="col">
-                                11
-                            </div></li>
-                            <li><div id="time12" class="col">
-                                12
-                            </div></li>
-                            <li><div id="time13" class="col">
-                                13
-                            </div></li>
-                            <li><div id="time14" class="col">
-                                14
-                            </div></li>
-                            <li><div id="time15" class="col">
-                                15
-                            </div></li>
-                            <li><div id="time16" class="col">
-                                16
-                            </div></li>
+                        <ul id="times">
+                            <li value="1"><div id="time1" class="active col"></div></li>
+                            <li value="2"><div id="time2" class="col"></div></li>
+                            <li value="3"><div id="time3" class="col"></div></li>
+                            <li value="4"><div id="time4" class="col"></div></li>
+                            <li value="5"><div id="time5" class="col"></div></li>
+                            <li value="6"><div id="time6" class="col"></div></li>
+                            <li value="7"><div id="time7" class="col"></div></li>
+                            <li value="8"><div id="time8" class="col"></div></li>
+                            <li value="9"><div id="time9" class="col"></div></li>
+                            <li value="10"><div id="time10" class="col"></div></li>
+                            <li value="11"><div id="time11" class="col"></div></li>
+                            <li value="12"><div id="time12" class="col"></div></li>
+                            <li value="13"><div id="time13" class="col"></div></li>
+                            <li value="14"><div id="time14" class="col"></div></li>
+                            <li value="15"><div id="time15" class="col"></div></li>
+                            <li value="0"><div id="time0" class="col"></div></li>
                         </ul>
                     </div>
                 </div>
@@ -97,5 +54,9 @@
                 <li>aaronjames0@yahoo.com</li>
             </ul>
         </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+        <script src="scripts.js" type="module"></script>
     </body>
 </html>

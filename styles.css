@@ -93,14 +93,14 @@ button.pause {
     height: 2.5vw;
 }
 
-.times {
+#times {
     list-style: none;
     text-align: left;
     height: 100%;
     display: flex;
 }
 
-.times li {
+#times li {
     display: inline-block;
     width: 6.25%;
     height: 100%;
