@@ -7,8 +7,15 @@
     </head>
     <body>
         <header>
-            <h1>Drum Sequencer</h1>
-            <h3>By Aaron James</h3>
+            <ul id="header">
+                <li><h1>Drum Sequencer</h1><h3>By Aaron James</h3></li>
+                <li>
+                    <div class="bpmInput">
+                        <label class="bpmLabel">BPM<input class="bpm" type="text" min="30" max="300" value="60"></label>
+                        <button type="button" class="up">up</button><button type="button" class="down">down</button>
+                        <input type="checkbox" class="metroSound" checked>
+                    </div></li>
+            </ul>
             <hr>
         </header>
         <section>

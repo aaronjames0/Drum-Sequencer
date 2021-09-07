@@ -1,24 +1,28 @@
 import metronome from "./metronome.js";
 
 let count = 1;
-let bpm = 120;
+let bpm = 60;
+let metronomeSound = true;
+const bpmInput = document.querySelector(".bpm");
+const bpmUp = document.querySelector(".up");
+const bpmDown = document.querySelector(".down");
+const metronomeToggle = document.querySelector(".metroSound");
 const time = "time";
-const opened = "col";
-const closed = "active col";
+const stepOff = "col";
+const stepOn = "active col";
 
 const click = new Audio("./sounds/metro.wav");
 const click2 = new Audio("./sounds/metro2.wav");
 
-function openLast() {
+function turnOff() {
     if (count == 16) count = 0;
-        document.getElementById(time + count.toString()).setAttribute("class", opened);
+        document.getElementById(time + count.toString()).setAttribute("class", stepOff);
 }
 
-function close() {
+function turnOn() {
     if (count == 16) count = 0;
-        document.getElementById(time + count.toString()).setAttribute("class", closed);
+        document.getElementById(time + count.toString()).setAttribute("class", stepOn);
 }
-
 
 $(document).on("click", "button", function(){
     if($(this).hasClass("play")) {
@@ -35,34 +39,68 @@ $(document).on("click", "button", function(){
 
 $(document).ready(function() { 
     $("#times").on("click", "li", function() {
-        openLast();
+        turnOff();
         count = this.value;
-        close();
+        turnOn();
     });
 });
 
+bpmInput.addEventListener("blur", updateBPM);
+
+bpmUp.addEventListener("click", function(){
+    if(bpm < 300) bpm++;
+    bpmInput.value = bpm;
+    updateMetronome();
+});
+
+bpmDown.addEventListener("click", function(){
+    if(bpm > 30) bpm--;
+    bpmInput.value = bpm;
+    updateMetronome();
+});
+
+metronomeToggle.addEventListener("input", function(){
+    if(metronomeSound) metronomeSound = false;
+    else metronomeSound = true;
+})
+
+function updateBPM() {
+    let min = parseInt(bpmInput.min);
+    let max = parseInt(bpmInput.max);
+    let val = parseInt(bpmInput.value);
+    if(!isNaN(val)) {
+        if(val < min) bpm = min;
+        else if(val > max) bpm = max;
+        else bpm = val;
+    }
+    bpmInput.value = bpm
+    updateMetronome();
+}
+
 function updateMetronome() {
-    metro.timeInterval = 60000 / bpm;
+    metro.timeInterval = 15000 / bpm;
 }
 
 function step() {
-    if(count == 1) {
-        click.play();
-        click.currentTime = 0;
-    }
-    else if(count % 4 == 1) {
-        click2.play();
-        click2.currentTime = 0;
+    if(metronomeSound) {
+        if(count == 1) {
+            click.play();
+            click.currentTime = 0;
+        }
+        else if(count % 4 == 1) {
+            click2.play();
+            click2.currentTime = 0;
+        }
     }
     if(count < 16) {
-        openLast();
+        turnOff();
         count++;
-        close();
+        turnOn();
     }
     else {
-        openLast();
+        turnOff();
         count = 1;
-        close();
+        turnOn();
     }
 }
 
