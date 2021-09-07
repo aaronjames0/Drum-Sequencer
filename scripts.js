@@ -42,6 +42,10 @@ $(document).ready(function() {
         turnOff();
         count = this.value;
         turnOn();
+        if(metro.running){
+            metro.stop();
+            metro.start();
+        }
     });
 });
 
@@ -81,7 +85,7 @@ function updateMetronome() {
     metro.timeInterval = 15000 / bpm;
 }
 
-function step() {
+function tick() {
     if(metronomeSound) {
         if(count == 1) {
             click.play();
@@ -92,6 +96,9 @@ function step() {
             click2.currentTime = 0;
         }
     }
+}
+
+function step() {
     if(count < 16) {
         turnOff();
         count++;
@@ -104,4 +111,4 @@ function step() {
     }
 }
 
-const metro = new metronome(step, 15000 / bpm);
+const metro = new metronome(tick, step, 15000 / bpm);
